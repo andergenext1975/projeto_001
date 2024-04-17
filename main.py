@@ -22,7 +22,7 @@ periodo = st.sidebar.selectbox('Escolha o Ano',['Todos'] + periodos)
 
 
 if(periodo != 'Todos') :
-    st.header('Mostrando resultado de ' + periodo)
+
     df = df[df['date'].dt.year==periodo]
 else:
     st.header('Mostrando resultados de todo período')
