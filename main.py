@@ -14,6 +14,10 @@ paises = list(df['area'].unique())
 variantes = list(df['variant_name'].unique())
 periodos = list(df['date'].dt.year.unique())
 
+# Ordenando os resultados o Filtro
+paises = sorted(paises)
+variantes = sorted(variantes)
+
 # Disponibilizando os Filtros para o Usuário
 pais = st.sidebar.selectbox('Escolha o pais',['Todos'] + paises)
 variante = st.sidebar.selectbox('Escolha a variante',['Todas'] + variantes)
