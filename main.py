@@ -5,14 +5,15 @@ import streamlit as st
 import plotly.express as px
 
 df = pd.read_csv('covid19_variants.csv')
-list(df)
+
+# Convertendo a coluna 'data' para o tipo datetime
 
 paises = list(df['area'].unique())
 variantes = list(df['variant_name'].unique())
-periodos = list(df['date'].unique())
-
 
 df['date'] = pd.to_datetime(df['date'],format='%Y-%m-%d')
+
+periodos = list(df['date'].dt.year.unique())
 
 
 pais = st.sidebar.selectbox('Escolha o pais',['Todos'] + paises)
@@ -22,7 +23,7 @@ periodo = st.sidebar.selectbox('Escolha a Data',['Todas'] + periodos)
 
 if(periodo != 'Todas') :
     st.header('Mostrando resultado de ' + periodo)
-    df = df[df['date']==periodo]
+    df = df[df['date'].dt.year==periodo]
 else:
     st.header('Mostrando resultados de todo período')
 
