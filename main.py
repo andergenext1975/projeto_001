@@ -9,10 +9,10 @@ list(df)
 
 paises = list(df['area'].unique())
 variantes = list(df['variant_name'].unique())
-
+periodos = list(pd.to_datetime(df['date'],format='%Y').unique())
 
 df['date'] = pd.to_datetime(df['date'],format='%Y-%m-%d')
-periodos = list(pd.to_datetime(df['date'],format='%Y').unique())
+
 
 pais = st.sidebar.selectbox('Escolha o pais',['Todos'] + paises)
 variante = st.sidebar.selectbox('Escolha a variante',['Todas'] + variantes)
