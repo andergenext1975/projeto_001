@@ -52,7 +52,7 @@ fig.update_layout(title='Casos diarios de Covid-19 by "Anderson Nascimento"')
 st.plotly_chart(fig,use_container_width=True)
 
 
-
+chat = st.chat_input('Informe sua duvidas')
 
 
 
