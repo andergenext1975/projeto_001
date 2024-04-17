@@ -18,10 +18,10 @@ periodos = list(df['date'].dt.year.unique())
 
 pais = st.sidebar.selectbox('Escolha o pais',['Todos'] + paises)
 variante = st.sidebar.selectbox('Escolha a variante',['Todas'] + variantes)
-periodo = st.sidebar.selectbox('Escolha a Data',['Todas'] + periodos)
+periodo = st.sidebar.selectbox('Escolha o Ano',['Todos'] + periodos)
 
 
-if(periodo != 'Todas') :
+if(periodo != 'Todos') :
     st.header('Mostrando resultado de ' + periodo)
     df = df[df['date'].dt.year==periodo]
 else:
