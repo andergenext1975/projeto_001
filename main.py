@@ -19,25 +19,25 @@ paises = sorted(paises)
 variantes = sorted(variantes)
 
 # Disponibilizando os Filtros para o Usuário
-pais = st.sidebar.selectbox('Escolha o pais',['Todos'] + paises)
-variante = st.sidebar.selectbox('Escolha a variante',['Todas'] + variantes)
-periodo = st.sidebar.selectbox('Escolha o Ano',['Todos'] + periodos)
+pais = st.sidebar.selectbox('Estado Americano: ',['Todos'] + paises)
+variante = st.sidebar.selectbox('Variante da COVID-19: ',['Todas'] + variantes)
+periodo = st.sidebar.selectbox('Período: ',['Todos'] + periodos)
 
 # Aplicando os Filtros
 if(periodo != 'Todos') :
     df = df[df['date'].dt.year==periodo]
 
 if(pais != 'Todos') :
-    st.header('Mostrando resultado de ' + pais)
+    st.header('Mostrando resultados de: ' + pais)
     df = df[df['area']==pais]
 else:
-    st.header('Mostrando todos os paises')
+    st.header('Mostrando os resultados de todos os Estados Americanos')
 
 if(variante != 'Todas') :
-    st.subheader('Mostrando resultado para variante ' + variante)
+    st.subheader('Mostrando os resultado para variante: ' + variante)
     df = df[df['variant_name']==variante]
 else:
-    st.subheader('Mostrando resultados para todas as variantes')
+    st.subheader('Mostrando os resultados de todas as variantes da COVID-19')
 
 # Agrupando as Informações por Data
 dfShow = df.groupby(by = ['date']).sum()  
