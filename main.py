@@ -46,7 +46,7 @@ dfShow = df.groupby(by = ['date']).sum()
 fig = px.line(dfShow,x=dfShow.index, y='specimens')
 
 # Definindo o Título
-fig.update_layout(title='Casos diarios de Covid-19')
+fig.update_layout(title='Casos diarios de Covid-19 by "Anderson Nascimento"')
 
 # Publicando
 st.plotly_chart(fig,use_container_width=True)
