@@ -52,10 +52,10 @@ fig.update_layout(title='Casos diarios de Covid-19 by "Anderson Nascimento"')
 st.plotly_chart(fig,use_container_width=True)
 
 # Agrupando as Informações por Data
-dfShow1 = df.groupby(by = ['date']).sum()  
+dfShow1 = df.groupby(by = ['specimens']).sum()  
 
 # Definindo os Eixos X e Y
-fig1 = px.line(dfShow1,x=dfShow1.index, y='specimens')
+fig1 = px.line(dfShow1,x=dfShow1.index, y='date')
 
 # Definindo o Título
 fig1.update_layout(title='Casos diarios de Covid-19 by "Anderson Nascimento"')
