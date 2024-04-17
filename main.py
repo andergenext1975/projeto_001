@@ -26,13 +26,13 @@ periodo = st.sidebar.selectbox('Escolha o Ano',['Todos'] + periodos)
 # Aplicando os Filtros
 if(periodo != 'Todos') :
     df = df[df['date'].dt.year==periodo]
-else:
-    st.header('Mostrando resultados de todo período')
+
 if(pais != 'Todos') :
     st.header('Mostrando resultado de ' + pais)
     df = df[df['area']==pais]
 else:
     st.header('Mostrando todos os paises')
+
 if(variante != 'Todas') :
     st.subheader('Mostrando resultado para variante ' + variante)
     df = df[df['variant_name']==variante]
