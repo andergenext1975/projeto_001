@@ -31,13 +31,13 @@ if(pais != 'Todos') :
     st.header('Mostrando resultados de: ' + pais)
     df = df[df['area']==pais]
 else:
-    st.header('Mostrando os resultados de todos os Estados Americanos')
+    st.header('Mostrando todos os resultados')
 
 if(variante != 'Todas') :
-    st.subheader('Mostrando os resultado para variante: ' + variante)
+    st.subheader('Mostrando os resultado da variante: ' + variante)
     df = df[df['variant_name']==variante]
 else:
-    st.subheader('Mostrando os resultados de todas as variantes da COVID-19')
+    st.subheader('Mostrando todas as variantes da COVID-19')
 
 # Agrupando as Informações por Data
 dfShow = df.groupby(by = ['date']).sum()  
