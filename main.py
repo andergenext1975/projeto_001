@@ -4,6 +4,7 @@ import plotly.express as px
 
 # Lendo o arquivo
 df = pd.read_csv('covid19_variants.csv')
+df = df.loc[df['variant_name'] != 'Total']
 
 # Convertendo a coluna 'data' para o tipo datetime
 df['date'] = pd.to_datetime(df['date'],format='%Y-%m-%d')
