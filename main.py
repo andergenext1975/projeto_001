@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import openai
 import plotly.express as px
 
 # Lendo o arquivo
@@ -54,5 +55,6 @@ st.plotly_chart(fig,use_container_width=True)
 
 chat = st.chat_input('Informe sua duvidas')
 
+openai.api_key = st.secrets['OPENAI_API_KEY']
 
 
