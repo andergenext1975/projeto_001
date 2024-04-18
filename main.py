@@ -80,7 +80,7 @@ with st.chat_message("assistant"):
      ):
         full_response += response.choices[0].delta.get("content","")
         message_placeholder.markdown(full_response + "")
-     message_placeholder.markdown(full_response)
+    message_placeholder.markdown(full_response)
 st.session_state.messages.apend({"role": "assistant", "content": full_response})
 
 chat = st.chat_input('Informe sua duvidas')
