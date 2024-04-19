@@ -2,6 +2,10 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
+st.set_page_config(
+    page_title="COVID-19",
+)
+
 # Lendo o arquivo
 df = pd.read_csv('covid19_variants.csv')
 df = df.loc[df['variant_name'] != 'Total']
