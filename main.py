@@ -1,6 +1,5 @@
 import pandas as pd
 import streamlit as st
-import openai
 import plotly.express as px
 
 # Lendo o arquivo
@@ -50,7 +49,7 @@ fig = px.line(dfShow,x=dfShow.index, y='specimens')
 fig.update_layout(title='Casos diarios de Covid-19 by "Anderson Nascimento"')
 
 # Publicando
-# st.plotly_chart(fig,use_container_width=True)
+st.plotly_chart(fig,use_container_width=True)
 
 
-
+chat = st.chat_input('Informe sua duvidas')
