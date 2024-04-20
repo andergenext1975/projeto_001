@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+import openai
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
